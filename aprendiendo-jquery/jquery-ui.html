@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo jQuery ui</title>
+    <!--Styles css-->
+    <link rel="stylesheet" href="css/Eventos.css">
+    <!--jQuery UI-->
+    <script src="jquery-3.6.4.min.js"></script>
+
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.theme.min.css">
+
+    <script src="js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="js/09-jquery-ui.js"></script>
+
+    <style>
+        .elementos {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin: 10px;
+            float: left;
+            border: 1px solid black;
+        }
+
+
+        .lista-seleccionable li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding: 20px;
+            width: 80%;
+            border: 1px solid black;
+            cursor: pointer;
+
+        }
+
+        ul .ui-selecting {
+            background-color: #f45;
+        }
+
+        ul .ui-selected {
+            background-color: #a23;
+        }
+
+        #elemento-movido {
+            width: 150px;
+            height: 150px;
+            border: 10px solid rgb(50, 18, 166);
+
+        }
+
+        #area {
+            width: 300px;
+            height: 300px;
+            border: 10px solid greenyellow;
+
+        }
+
+        .caja-efectos {
+            background-color: rgb(211, 169, 232);
+            float: none;
+            display: none;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>INTRODUCCION A JQUERY-UI</h1>
+    </div>
+    <hr>
+    <h3>Tooltip</h3>
+    <a href="#" title="Acceder a mis datos personales">Mis datos</a>
+    <a href="#" title="Logearme en la pagina">Identificarse</a>
+    <a href="#" title="ver todos mis amigos">Amigos</a>
+    <hr>
+    <h3>Cuadros de dialogo</h3>
+    <button class="lanzar-popup">Lanzar</button>
+    <div class="popup" title="¿Estas Seguro de continuar?">
+        <p>Si continuas con el curso david, seras muy inteligente y ganaras dinero</p>
+    </div>
+    <hr>
+    <h3>Calendario</h3>
+    <input type="text" name="" id="calendario">
+    <hr>
+    <h3>Panel de pestañas</h3>
+    <div id="pestanas">
+        <ul>
+            <li><a href="#tabs-1">Pestaña 1</a></li>
+            <li><a href="#tabs-2">Pestaña 2</a></li>
+            <li><a href="#tabs-3">Pestaña 3</a></li>
+        </ul>
+        <div id="tabs-1">
+            <p>Hola soy la pagina 1</p>
+        </div>
+        <div id="tabs-2">
+            <p>Hola soy la pagina 2</p>
+        </div>
+        <div id="tabs-3">
+            <p>Hola soy la pagina 3</p>
+        </div>
+    </div>
+    <hr>
+    </div>
+    <button id="mostrar">Mostrar</button>
+    <br>
+    <br>
+    <div class="caja-efectos">
+    </div>
+    <br>
+    <div id="area"></div>
+    <br>
+    <div id="elemento-movido"></div>
+    <hr>
+    <ul class="lista-seleccionable">
+        <li>GTA 5</li>
+        <li>Call of duty</li>
+        <li>Super mario</li>
+        <li>Superman</li>
+    </ul>
+    <hr>
+    <div class="elementos">
+        Hola, soy un elemento de la web 1
+    </div>
+    <div class="elementos">
+        Hola, soy un elemento de la web 2
+    </div>
+    <div class="elementos">
+        Hola, soy un elemento de la web 3
+    </div>
+</body>
+
+</html>

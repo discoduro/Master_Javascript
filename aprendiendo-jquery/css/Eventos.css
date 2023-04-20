@@ -1,0 +1,69 @@
+#principal{
+    display:  flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+
+#caja_css {
+    width: 250px;
+    height: 250px;
+    background: yellow;
+    border: 2px solid brown;
+}
+
+/* eventos mouseOver con CSS */
+#caja_css:hover {
+    transition: 300ms all; 
+    /* da la animacion suave al ingresr y salir del elemento con el mouse*/
+    background: greenyellow;
+    /* da un color de fondo para que se visualice al pasar el mouse por encima*/
+    cursor: pointer;
+    /* cambia el estilo del mouse al ingresar en el elemento*/
+}
+
+#componente2 {
+    width: 250px;
+    height: 250px;
+    background: royalblue;
+    border: 2px solid rgb(44, 242, 156);
+}
+
+/* #componente2:hover {
+    transition: 300ms all;
+    background: rebeccapurple;
+    cursor: pointer;
+} */
+
+#componente3 {
+    width: 250px;
+    height: 250px;
+    background: rgb(19, 32, 73);
+    border: 2px solid rgb(0, 89, 50);
+}
+#nombre{
+    /*poner este elemento debajo de los 3 elemetos de colores y centrarlo usando flexbox*/
+    padding: 10px;
+    font-size: 20px;
+    width: 300px;
+    display: flex;
+    
+}
+#contenido{
+    width: 250px;
+    height: 50px;
+    border: 5px dashed black ;
+    display: none;
+    padding: 30px;
+}
+#sigueme{
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+    background: mediumvioletred;
+    border-radius: 30px;
+    border:  5px solid black;
+    display: block;
+    position: absolute;
+}
