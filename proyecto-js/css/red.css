@@ -1,0 +1,35 @@
+
+
+body {
+
+    background: url('../img/13be94a336b53801e4793ccb2b52e46f.jpg');
+    background-attachment: fixed;
+}
+
+#logo {
+    background: #d61515;
+}
+
+#menu li:hover {
+    background: #ff1c1c;
+
+}
+
+.buttom-more {
+    background: #d61515;
+
+}
+
+.buttom-more:hover {
+    background: #ff1c1c;
+
+}
+
+form input[type="submit"] {
+
+    background: #d61515;
+}
+
+form input[type="submit"]:hover {
+    background: #ff1c1c;
+}

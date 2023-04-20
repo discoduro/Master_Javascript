@@ -1,0 +1,32 @@
+body {
+
+    background: url('../img/naturaleza-paisaje-600x337.webp');
+    background-attachment: fixed;
+}
+
+#logo {
+    background: #235e3d;
+}
+
+#menu li:hover {
+    background: #13542f;
+
+}
+
+.buttom-more {
+    background: #235e3d;
+
+}
+.buttom-more:hover {
+    background: #13542f;
+
+}
+
+form input[type="submit"] {
+
+    background: #235e3d;
+}
+
+form input[type="submit"]:hover {
+    background: #13542f;
+}

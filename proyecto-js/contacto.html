@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto con javascript</title>
+    <!--estilos css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link id="theme" rel="stylesheet" href="css/red.css">
+    <!--color por defecto. se pone un identificador para llamarlo desde js y cambiarle la propiedad del href al tema que sigue cuando sede click-->
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.min.css" />
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" href="js/jquery-ui-1.13.2/jquery-ui.theme.min.css" />
+    <script type="text/javascript" src="js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+
+    <!--pluggim validacion jquery -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <!--Mis scripst-->
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <div id="selector-theme">
+        <div id="to-red"></div>
+        <div id="to-blue"></div>
+        <div id="to-green"></div>
+    </div>
+    <section id="global">
+        <!--CABECERA-->
+        <header>
+            <div id="logo">
+                Proyecto Js
+            </div>
+            <div class="clearfix"></div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reloj.html">Reloj</a></li>
+                    <li><a href="sobre_mi.html">Sobre MI</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="" id="nombre"></a></li>
+                    <li id="cerrar_sesion"></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--CONTENIDO-->
+        <section id="content">
+            <!--Cargar formulario de contacto-->
+            <div class="box">
+                <h2>Contacto</h2>
+                <form action="" method="post" id="form_contacto">
+
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="" placeholder="Digite su nombre completo"
+                        data-validation="alphanumeric">
+
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" placeholder="Digite sus apellidos completos"
+                        data-validation="alphanumeric">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Digite email" data-validation="email">
+
+                    <label for="sex">Sexo</label>
+                    <select name="sex" id="" data-validation="required">
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+
+                    <label for="date">Fecha de nacimiendo</label>
+                    <input type="text" name="date" data-validation="date" data-validation-format="dd-mm-yyyy" />
+
+                    <label for="edad">Edad</label>
+                    <input type="number" name="edad" placeholder="Digite su edad esapta" data-validation="number">
+
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+            <aside id="sidebar">
+                <div id="about">
+                    <h4><span>¿Quien Soy?</span></h4>
+                    <img src="img/caracol.jpeg" alt="soy un caracol">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores dolorum debitis, illo
+                        perspiciatis non atque consequatur repellat nesciunt quia in vel ad, nam excepturi vitae velit
+                        nemo quod cumque?</p>
+                </div>
+                <div id="login">
+                    <h4><span>Identificate</span></h4>
+                    <form action="">
+                        <label for="name">
+                            Nombre
+                        </label>
+                        <input type="text" name="name" id="form_name">
+                        <label for="correo">
+                            Correo
+                        </label>
+                        <input type="email" name="correo">
+                        <label for="clave">
+                            Clave
+                        </label>
+                        <input type="password" name="clave">
+                        <br>
+                        <input type="submit" value="Entrar">
+                    </form>
+                </div>
+                <div id="about">
+                    <h4><span>¡Lugar para pasarla bien!</span></h4>
+                    <img src="img/cartagena" alt="relax">
+                    <h5>Cartagena de Indias</h5><br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi maiores dolorum debitis, illo
+                        perspiciatis non atque consequatur repellat nesciunt quia in vel ad, nam excepturi vitae velit
+                        nemo quod cumque?
+                    </p>
+                </div>
+            </aside>
+            <div class="clearfix"></div>
+        </section>
+    </section>
+    <footer>
+        Master en javascript &copy; 2023
+        <button class="subir" value="subir">Subir</button>
+    </footer>
+
+</body>
+
+</html>
