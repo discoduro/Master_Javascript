@@ -1,0 +1,108 @@
+<p>zapatos works!</p>
+<div class="component">
+    <img src="https://i.ebayimg.com/thumbs/images/g/As4AAOSwdbVjY579/s-l225.png" alt="">
+    <h2>Nombre del zapato</h2>
+    <p>Marca: </p>
+    <p>Color: </p>
+    <p>Talla: </p>
+    <p>Stock: </p>
+    <p>Precio: </p>
+    <button>Comprar</button>
+    <button>añadir al carrito</button>
+    <button>ver detalles</button>
+</div>
+
+<div>
+    <!-- two  way data-binding 
+    se trabaja a nivel vidireccional en el componente como en la vista de forma asincrona instantanea
+    eso quiere decir que los cambios de generan de forma instantanea en el componente como en la vista
+    -->
+    
+    
+
+    <p>Añadir marca</p>
+
+    <p>
+        <!-- es una directiva, para usarlo se debe usar los parentesis y corchetes para poder modificar una propiedad de la clase con two way data-binding -->
+        <input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()"> 
+
+        <!-- funtion Qlik -->
+        <button (click)="getMarca2()">Mostrar marca</button>
+        <button (click)="addMarca2()">Añadir marca</button>
+    </p>
+
+    <p>{{mi_marca}}</p>
+
+<!-- este punto final del  ejemplo de two way data- binding -->
+
+
+    <h2>{{titulo}}</h2><br>
+    <p>Compra unas zapatillas de las mejores marcas</p>
+    <br>
+    <ul>
+        <!-- acceder al indice de la directiva *ngFor de la sigiente forma (marcas; let indice = index )-->
+        <li  *ngFor="let marca of marcas; let indice = index">
+            {{indice+' - '+marca}}
+        <button (click)="borrarMarca(indice)">Borrar</button>
+
+        </li>
+    </ul><br>
+    <p>Las zapatillas deportivas disponibles son las siguientes</p><br>
+    <ul>
+         <!-- se esta llamando el array de zapatos que esta en el componente zapatos.component.ts y se esta recorriendo con el *ngFor sirve para recorres un array y  mostrando en la vista -->
+        <li *ngFor="let moda of zapatos">
+
+            <!-- se realiza una condicion para que no tache los zapatos que no estan en stock-->
+        <span [ngStyle]="{
+                'text-decoration' : !moda.stock ? 'line-through' : 'none',
+            }">  
+            <!-- de esto forma creo una clase a este elmeneto para darle estilos especificos  -->
+                {{moda.nombre}} - {{moda.marca}} - {{moda.color}} -
+            <strong 
+                [class.altoPrecio]="moda.precio >=80"
+                [ngClass]="{
+                    fondoRojo: moda.precio >100,
+                    subrayado: moda.marca <= 'reebook'
+                    
+                }"
+                >{{moda.precio}}$ 
+            </strong>
+        </span> 
+
+                <!-- exprecion condicional para mostrar zapatos en oferta sobre el atributo moda.precio con la directiva *ng-->
+                <span *ngIf="moda.precio < 140"
+                    [style.background]="moda.precio < 140 ? 'green' : 'transparent'"
+                    [style.color]="moda.precio < 140 ? 'white' : 'transparent'"
+                    >
+                    !En Oferta¡
+                </span>
+        </li>
+    </ul>
+<br>
+
+<!-- la directiva estructural ngSwitch sirve para crear casos y compararlo en una cndicion, si se cumple la condicion entra al caso y ejecuta el caso -->
+    <p> El color de la mayoria de nuestras zapatillas es: </p>
+
+    <!-- creo un input y le paso la variable color con la directiva estructural bidireccional [(ngModel)]='nombre variable ' -->
+    <input type="text" [(ngModel)]="color">
+
+    <!-- llamo la variable color declarada en la clase del componente -->
+    <ul [ngSwitch]="color"> 
+
+        <!-- realizo los distintos casos con los que se va a comunicar la direcctiva condicional -->
+        <li *ngSwitchCase ="'blue'">
+            El color predominante es el <span [ngStyle]="{'background' : color}">azul</span>
+        </li>
+        <li *ngSwitchCase ="'green'">
+            El color predominante es el <span [ngStyle]="{'background' : color}">verde</span>
+        </li>
+        <li *ngSwitchCase ="'red'">
+            El color predominante es el <span [ngStyle]="{'background' : color}">rojo</span>
+        </li>
+    </ul>
+
+
+
+
+</div>
+
