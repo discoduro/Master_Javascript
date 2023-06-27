@@ -1,1 +1,19 @@
-<p>home works!</p>
+<p>componente del home</p>
+
+<h1>Pagina Principal</h1>
+
+<!-- de la siguente forma se hace un candicion estructuran con las directivas condicionales *ngIf y *ngElse -->
+
+<!-- manejar el then: esto nos permite hacer un is else if de forma mas dinamica en una template identifocado donde va el adgoritmo -->
+<div *ngIf="identificado; then siIdentificado else noIdentificado"></div>
+
+<ng-template #siIdentificado>
+    <h3> Estas idetificado en la aplicacion</h3>
+    <button (click)="usetIdentificado()">Borrar identificacion    </button>
+</ng-template>
+
+<!-- de esta forma se crea una variable ne la vista -->
+<ng-template #noIdentificado>
+    <p>No esta identificado, pulsa este boton para identificarse</p>
+    <button (click)="setIdentificado()">identicate</button>
+</ng-template>

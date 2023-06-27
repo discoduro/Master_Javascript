@@ -371,6 +371,24 @@
     <!-- button para mostrar el componente videojuegos -->
   <button (click)="mostrarVideojuegos()">Mostrar</button> 
 
+
+  <!--  -->
+  <nav>
+    <!-- routerLinkActive="router-link-active" es una clase con la cual se pueden dar estilos css -->
+ 
+    <a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+    &nbsp;
+    <a [routerLink]="['/zapatos']" routerLinkActive="router-link-active" >Zapatillas</a>
+    &nbsp;
+    <a [routerLink]="['/cursos']" routerLinkActive="router-link-active" >Cursos</a>
+    &nbsp;
+    <a [routerLink]="['/videojuego']" routerLinkActive="router-link-active" >Video Juego</a>
+    &nbsp;
+    <a [routerLink]="['/externo']" routerLinkActive="router-link-active" >externo</a>
+    
+  </nav>
+  <hr>
+  
   <!-- se muestra el componente videojuegos si la variable mostrar_videojuegos es true -->
   <!-- <videojuego *ngIf="mostrar_videojuegos"></videojuego> *ngif es una directiva estructural que permite mostrar o no un elemento del DOM -->
 

@@ -1,0 +1,9 @@
+<h1>Componente Externo</h1>
+<span>Peticiones Ajax</span>
+
+<input type="text" [(ngModel)]="userId"  (keyup.enter)="cargaUsuario">
+
+<div *ngIf="user">
+    <h2>{{user.email+' '+user.first_name+' '+user.last_name}}</h2>
+    <img src="{{user.avatar}}" alt="">
+</div>
