@@ -26,4 +26,26 @@ export class PeticionesServices{
     getUser(userId: number): Observable<any>{
         return this._http.get(this.url+'api/users/'+userId);
     }
+
+
+    // como guardar un nuevo usuario en un back ent por peticion post
+
+    // hay que añadir un metodo user y que devuelva un observable de tipo any
+    // le pasamos un objeto para guardar
+    // hayq ue enviar los datos en un json string
+
+    // para convertit un objeto de javascript puro a un json string hay que usar el objeto json.stringify(user) y le pasamos el usuario
+
+    // de esta forma se hace una peticion ajax por metodo post 
+    addUser(user: any): Observable<any>{
+        let params = JSON.stringify(user);
+        // indicar cabeceras con htpheaders() usando el metodo set()
+        let headers = new HttpHeaders().set('content-type','application/json')
+
+        // le indico que retorne la peticion http 
+
+        return this._http.post(this.url+'api/users', params, {headers: headers});
+    }
+
+
 }

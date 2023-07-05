@@ -1,9 +1,58 @@
 <h1>Componente Externo</h1>
+<h3>se esta realizando conexion a api rest para consumir un los servicios</h3>
 <span>Peticiones Ajax</span>
+<br/>
+<!-- pipes -->
+<span>
+{{fecha | date:'dd/mm/yy - hh:mm:ss'}}<br>
+{{fecha | date:'fullDate' | uppercase}}<br>
+{{'HOLA MUNDO USANDO PIPES' | lowercase}}<br>
+{{88 | calculadora : 2}}
+</span>
+<hr/>
+<!-- que aparezca un cargando cuando se demore en cargar los datos -->
+<div *ngIf="!user">
+    Cargando...
+</div>
+<!-- cuando le de clink despues de ingrar un numero llama los datos correspondientes al id -->
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario()">
 
-<input type="text" [(ngModel)]="userId"  (keyup.enter)="cargaUsuario">
-
-<div *ngIf="user">
-    <h2>{{user.email+' '+user.first_name+' '+user.last_name}}</h2>
+<div *ngIf="userId">
     <img src="{{user.avatar}}" alt="">
+
+    <h2>{{user.first_name+' '+user.last_name}}</h2>
+</div>
+
+<hr>
+
+<h2>Craer usuario </h2>
+
+        <!-- el subin databindin es para modificar el objeto [(ngModel)]="newUser" -->
+
+        <h3>Este es un formulario de angular realiza una peticion http por metodo post a un servicipo rest</h3>
+
+<form  #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+    <p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" 
+        required >
+        <span *ngIf="name.touched && !name.valid">
+            El nombre no es valido
+        </span>
+    </p>
+    <p>
+        <label for="job">Trabajo</label>
+        <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job"
+        required >
+        <span *ngIf="job.touched && !job.valid">
+            El trabajo no es valido
+        </span>
+    </p>
+    <input type="submit"  value="Guardar usuario" [disabled]="!newUser.form.valid">
+</form> 
+<div *ngIf="usuario_guardado">
+    <h1>el usuario se a guardado correctamente en la base de datos por peticion ajax</h1>
+    <h3>{{usuario_guardado.name}}</h3>
+    <h3>{{usuario_guardado.job}}</h3>
+
 </div>

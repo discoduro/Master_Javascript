@@ -11,6 +11,7 @@ import {ZapatosComponent} from './zapatos/zapatos.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ExternoComponent } from "./externo/externo.component";
+import { ContactoComponent } from "./contacto/contacto.component";
 
 
 // #3 configurar array  de rutas
@@ -21,8 +22,9 @@ const appRoutes: Routes = [
     {path: 'zapatos', component: ZapatosComponent},
     {path: 'videojuego', component: VideojuegoComponent},
     {path: 'cursos', component: CursosComponent},
-    {path: 'externo', component: ExternoComponent},
     {path: 'cursos/:nombre/:followers', component: CursosComponent},
+    {path: 'externo', component: ExternoComponent},
+    {path: 'contacto', component: ContactoComponent},
     {path: '**', component: HomeComponent}
     
 ];
