@@ -34,3 +34,4 @@ if (numero1 == 10) {
 }
 console.log(numero1, numero2);
 console.log(cadena, numero, verdadero_falso, cualquiera, lenguajes, years, pais, numero1, numero2, PI, multiple_dato, dato_personalizado);
+console.log(alert('esta es una alerta de js con node'));
