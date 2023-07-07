@@ -2,6 +2,9 @@
 const proyects = require('../models/proyects');
 // importar el modelo
 
+// importar libreria de nodejs para eliminar.
+const fs = require('fs');
+
 var Proyect = require('../models/proyects');
 
 // crear la variable del controlador
@@ -120,7 +123,7 @@ var controller = {
 
 
     // # funcion para eliminar un objeto
-    
+
     deleteProyect: function(req, res){
         var proyectId =req.params.id;
 
@@ -136,10 +139,55 @@ var controller = {
             console.log(err);
             return res.status(500).send({message: 'Error al eliminar el proyecto'})
         })
-    }
+    },
     
-    
+    //  funcion para subir imagenes al servidor
+        // configurar el mutiparter para poder subir imagenes en el archivo de rutas
+
+        uploadImage: function(req, res){
+            var proyectId = req.params.id;
+            var fileName = 'Imagen no subida...';   
         
+            // algoritmo para consultar datos de la imagen y subirla a la base de datos  
+            if(req.files && req.files.imagen){
+
+                // sacar valores de la imagen para guardarlo en la base de datos
+                var filePath = req.files.imagen.path;
+                var fileSplit = filePath.split('\\');
+                var fileName = fileSplit[1];
+                // comprovar que extencion se esta subiendo y si es correcta. si no lo es que lo borre del la carpeta upload
+                // sacar la extencion del archivo y cortar por el punto del archivo que es la extencion del archivo
+                var extSplit = fileName.split('\.');
+                // extencion o indice 1 del array
+                var fileExt = extSplit[1];
+
+                // validar la extencion de la imagen
+                if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
+
+                    Proyect.findByIdAndUpdate(proyectId, { imagen: fileName }, { new: true })
+
+                    .then(proyectUpdate => {
+                        if (!proyectUpdate) {
+                            return res.status(404).send({ message: 'El proyecto no existe' });
+                        }
+                        return res.status(200).send({ proyect: proyectUpdate });
+                    })
+                    .catch(err => {
+                        console.error('Ha ocurrido un error', err);
+                        return res.status(500).send({ message: 'Error al actualizar el proyecto' });
+                    })
+                }else{
+                    fs.unlink(filePath, ()=>{
+                        return res.status(200).send({message: 'La extencion no es valida'});
+                    });
+                }
+            } else {
+                return res.status(200).send({
+                    message: fileName
+                });
+            }
+        }
+         
 };
 
 module.exports = controller;

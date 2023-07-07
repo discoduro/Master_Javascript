@@ -13,7 +13,16 @@ var ProyectController = require('../controllers/proyect');
 
 var router = express.Router();
 
-    // acceder al metodo home
+
+// crear una configuracion del middleweare multipar
+
+    // para usar el middleaware hay que aplicarlo a una ruta para que se ejecute antes que la accion se para como parametro a la ruta
+
+var multiparter = require('connect-multiparty');
+var multipartMiddleware = multiparter({uploadDir: './uploads'});
+
+
+// acceder al metodo home
 
     router.get('/home', ProyectController.home);
     router.post('/test', ProyectController.test);
@@ -22,6 +31,7 @@ var router = express.Router();
     router.get('/proyects', ProyectController.getProyects);
     router.put('/proyect/:_id', ProyectController.updateProyect);
     router.delete('/proyect/:id', ProyectController.deleteProyect);
+    router.post('/upload-imagen/:id', multipartMiddleware, ProyectController.uploadImage);
 
     
     
