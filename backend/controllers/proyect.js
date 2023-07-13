@@ -49,7 +49,7 @@ var controller = {
                 return res.status(200).send({proyect: proyectStored});
             })
             .catch((err) => {
-                return res.status(500).send({message: 'error al gusradar el documento'});
+                return res.status(500).send({message: 'error al guardar el documento'});
             });
     },
 
