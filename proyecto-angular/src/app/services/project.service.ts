@@ -25,12 +25,17 @@ export class ProjectService{
 
     // # metodo para guardar un nuevo proyecto
 
-    saveProject(project: Project): Observable<any>{
-        let params = JSON.stringify(project);
+    saveProject(proyect: Project): Observable<any>{
+        let params = JSON.stringify(proyect);
         let headers = new HttpHeaders().set('Content-Type','application/json');
 
 
         return this._http.post(this.url+'save-proyect', params, {headers: headers});
+    }
+
+    getProjects(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+        return this._http.get(this.url+"proyects", {headers: headers});
     }
 
 

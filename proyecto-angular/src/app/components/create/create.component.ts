@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from 'src/app/services/project.service';
 import { NgForm } from '@angular/forms';
-import { UploadService } from 'src/app/services/upload.service';  
+import { UploadService } from '../../services/upload.service';  
 import { Global } from '../../services/global'; 
 
 @Component({
@@ -15,7 +15,7 @@ import { Global } from '../../services/global';
 export class CreateComponent implements OnInit{
   public title: string;
   public project: Project;
-  public save_project: any;
+  public url: string;
   public status: string;
   public filesToUpload: Array<File>;
   
@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit{
     this.project = new Project('','','',0,'','');
     this.status = '';
     this.filesToUpload = [];
-    this.save_project;
+    this.url = Global.url;
   };
 
   onSubmit(form: any){
@@ -35,11 +35,12 @@ export class CreateComponent implements OnInit{
     console.log(this.project);
       this._proyectService.saveProject(this.project).subscribe(
         (response: any) => {
-          if(response.project){
-            
+          if(response.proyect){
+            console.log(response.proyect);
             // subir imagen    
-            this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.Project._id, [], this.filesToUpload, 'imagen')
+            this._uploadService.makeFileRequest(this.url+"upload-image/"+response.proyect._id, [], this.filesToUpload, 'imagen')
             .then((result:any)=>{
+              form.reset();
               this.status = 'success';
               console.log(result);
               form.reset();
