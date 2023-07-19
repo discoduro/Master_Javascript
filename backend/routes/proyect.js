@@ -32,6 +32,7 @@ var multipartMiddleware = multiparter({uploadDir: './uploads'});
     router.put('/proyect/:_id', ProyectController.updateProyect);
     router.delete('/proyect/:id', ProyectController.deleteProyect);
     router.post('/upload-image/:id', multipartMiddleware, ProyectController.uploadImage);
+    router.get('/get-image/:image',  ProyectController.getImageFile);
 
     
     

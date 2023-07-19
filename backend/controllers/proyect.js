@@ -4,8 +4,8 @@ const proyects = require('../models/proyects');
 
 // importar libreria de nodejs para eliminar.
 const fs = require('fs');
-
 var Proyect = require('../models/proyects');
+var path = require('path');
 
 // crear la variable del controlador
 
@@ -186,6 +186,22 @@ var controller = {
                     message: fileName
                 });
             }
+        },
+
+        getImageFile: function(req, res){
+            var file = req.params.image;
+            var path_file = './uploads/'+file;
+
+
+            fs.exists(path_file, (exists)=>{
+                if(exists){
+                    return res.sendFile(path.resolve(path_file))
+                }else{
+                    return res.status(200).send({
+                        message: 'La ruta no exixte...'
+                })
+                }
+            });
         }
          
 };
