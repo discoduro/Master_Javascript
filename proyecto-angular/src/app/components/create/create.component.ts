@@ -15,6 +15,7 @@ import { Global } from '../../services/global';
 export class CreateComponent implements OnInit{
   public title: string;
   public project: Project;
+  public save_project: Array<any>; 
   public url: string;
   public status: string;
   public filesToUpload: Array<File>;
@@ -28,6 +29,7 @@ export class CreateComponent implements OnInit{
     this.status = '';
     this.filesToUpload = [];
     this.url = Global.url;
+    this.save_project = [];
   };
 
   onSubmit(form: any){
@@ -36,7 +38,8 @@ export class CreateComponent implements OnInit{
       this._proyectService.saveProject(this.project).subscribe(
         (response: any) => {
           if(response.proyect){
-            console.log(response.proyect);
+            // console.log(response.proyect);
+            this.save_project = response.project;
             // subir imagen    
             this._uploadService.makeFileRequest(this.url+"upload-image/"+response.proyect._id, [], this.filesToUpload, 'imagen')
             .then((result:any)=>{
