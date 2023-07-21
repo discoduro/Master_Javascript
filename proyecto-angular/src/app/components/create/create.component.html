@@ -2,7 +2,7 @@
     <h2>{{title}}</h2>
 
         <div class="message success" *ngIf="status === 'success'">
-            El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', project._id]">verlo aqui</a>
+            El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aqui</a>
         </div>
         <div class="message failed" *ngIf="status === 'failed'">
             EL proyecto NO SE A PORDIDO CREAR
@@ -21,6 +21,13 @@
             <textarea  name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
             <span class="form-error"  *ngIf="description.touched && !description.valid">
                 La descripcion es requerida
+            </span>
+        </p>
+        <p>
+            <label for="category">Categoria</label>
+            <textarea  name="category" #category="ngModel" [(ngModel)]="project.category" required></textarea>
+            <span class="form-error"  *ngIf="category.touched && !category.valid">
+                La category es requerida
             </span>
         </p>
         <p>
