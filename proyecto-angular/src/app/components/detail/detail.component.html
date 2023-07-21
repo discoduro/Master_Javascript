@@ -1,9 +1,15 @@
-<h1>detalle de proyecto</h1>
-
-<div *ngIf="project">
-    <h3>{{project.name}}</h3>
-    <p>{{project.description}}</p>
-    <p>{{project.year}}</p>
-    <p>{{project.langs}}</p>
-    <p>{{project.imagen}}</p>
+<div class="container-detail">
+  <div class="image-detail">
+    <img src="{{url+'get-image/'+proyect.imagen}}" *ngIf="proyect.imagen" alt="">
   </div>
+  <div class="data">
+    <h1>{{proyect.name}}</h1>
+    <h3>{{proyect.description}}</h3>
+    <p>{{proyect.year}}</p>
+    <p>{{proyect.langs}}</p>
+    <p class="buttoms-conf">
+      <a href="#" class="buttom-edit">Editar</a>
+      <a href="#" class="buttom-delete">Borrar</a>
+    </p>
+  </div>
+</div>
