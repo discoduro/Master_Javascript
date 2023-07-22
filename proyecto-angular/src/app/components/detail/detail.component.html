@@ -9,8 +9,8 @@
     <p>{{proyect.year}}</p>
     <p>{{proyect.langs}}</p>
     <p class="buttoms-conf">
-      <a href="#" class="buttom-edit">Editar</a>
-      <a href="#" class="buttom-delete">Borrar</a>
+      <a (click)="deleteProject" class="buttom-edit">Editar</a>
+      <a (click)="deleteProject(proyect._id)"  class="buttom-delete">Borrar</a>
     </p>
   </div>
 </div>
