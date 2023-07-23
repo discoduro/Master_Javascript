@@ -275,51 +275,68 @@ form input[type="submit"]:hover {
     display: flex;
 }
 
-.image-detail img{
+.image-detail img {
     max-width: 550px;
     min-height: 380px;
     padding: 15px;
-    padding-top:30px ;
+    padding-top: 30px;
 }
-.data{
+
+.data {
     width: 40%;
-    min-height:350px ;
+    min-height: 350px;
     padding: 15px;
-    padding-top:30px ;
+    padding-top: 30px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.buttoms-conf{
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: auto;
-    justify-content: space-evenly;
-}
-.buttom-edit{
-    text-decoration: none;
-    width: 100px;
-    padding: 10px;
-    margin-right: 50px;
-    justify-content: center;
-    text-align: center;
-    background: orange;
-
-}
-.buttom-delete{
-    text-decoration: none;
-    width: 100px;
-    padding: 10px;
-    margin-right: 50px;
-    justify-content: center;
-    text-align: center;
-    background: red;
-
-}
-
-.data, 
-h1, h3, p{
+.data,
+h1,
+h3,
+p {
     margin: 20px;
 }
 
+.buttoms-conf {
+    display: flex;
+    flex-wrap: wrap;
+    /* Cambio flex-wrap para que los elementos se ajusten al ancho */
+    justify-content: center;
+    /* Cambio para centrar el contenido horizontalmente */
+    align-items: center;
+    /* Cambio para centrar el contenido verticalmente */
+    margin-top: auto;
+    text-align: center;
+    /* Cambio para centrar el texto del span */
+}
+
+.confirm {
+    display: block;
+    /* Cambio para hacer que el span ocupe todo el ancho */
+    font-weight: bold;
+    margin-top: 15px;
+    color: red;
+    width: 100%;
+    /* Añadido para que el span ocupe todo el ancho */
+}
+
+.buttom-edit,
+.buttom-delete {
+    text-decoration: none;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+    /* Añadido para dar espacio entre los botones */
+}
+
+.buttom-edit {
+    background: orange;
+}
+
+.buttom-delete {
+    background: red;
+}

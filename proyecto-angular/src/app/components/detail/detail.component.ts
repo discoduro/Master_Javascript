@@ -14,6 +14,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class DetailComponent implements OnInit {
   public url: string;
   public proyect: Project;
+  public confirm: boolean;
 
   constructor( 
     private _projectService: ProjectService,
@@ -22,6 +23,7 @@ export class DetailComponent implements OnInit {
   ) {
     this.url = Global.url;
     this.proyect = new Project('','', '', '', 0, '', '');
+    this.confirm= false;
   }
 
   ngOnInit(): void {
@@ -52,5 +54,9 @@ export class DetailComponent implements OnInit {
       }
     )
 
+  }
+
+  setConfirm(confirm: any){
+    this.confirm = confirm;
   }
 }
