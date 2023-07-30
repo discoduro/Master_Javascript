@@ -7,6 +7,7 @@ var app = express();
 
 // cargar archivos de rutas
 var proyect_routes = require('./routes/proyect');
+var contact_routes = require('./routes/contact');
 
 
 // middlewares
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 // rutas
  
 app.use('/api', proyect_routes);
+app.use('/api', contact_routes);
 
 
     // usando el metodo http get    
