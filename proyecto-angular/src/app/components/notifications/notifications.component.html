@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Notificaciones</h2>
+        <table class="table table-striped table-hover table-bordered ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Asunto</th>
+                    <th>Correo</th>
+                    <th>Mensaje</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <!-- <a [routerLink]="['/proyecto', contact._id]"> -->
+            <tbody>
+                <tr *ngFor="let contact of  contacts" class="notificacion">
+                    <td></td>
+                    <td>{{contact.nombre}}</td>
+                    <td>{{contact.fecha}}</td>
+                    <td>{{contact.asunto}}</td>
+                    <td>{{contact.correo}}</td>
+                    <td>{{contact.mensaje}}</td>
+                    <td>
+                        <a href="">Editar</a>
+                        <a href="">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- </a> -->
+        </table>
+</div>

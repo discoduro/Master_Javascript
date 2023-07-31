@@ -55,46 +55,46 @@ var controllerContact = {
     },
 
 
-//     // # funcion para listar datos
+    // # funcion para listar datos
 
-//     // consular objetos de nuestra base de datos
-//     // hay que crear la ruta
+    // consular objetos de nuestra base de datos
+    // hay que crear la ruta
 
-//     getProyect: function(req, res) {
-//         var proyectId = req.params.id;
+    // getContact: function(req, res) {
+    //     var contactId = req.params.id;
 
-//         if(proyectId == null){
-//             return res.status(404).send({ message: 'El proyecto no existe' });
-//         }
+    //     if(contactId == null){
+    //         return res.status(404).send({ message: 'El proyecto no existe' });
+    //     }
     
-//         Proyect.findById(proyectId)
-//             .then(proyect => {
-//                 if (!proyect) {
-//                     return res.status(404).send({ message: 'El proyecto no existe' });
-//                 }
-//                 return res.status(200).send({ proyect });
-//             })
-//             .catch(err => {
-//                 return res.status(500).send({ message: 'Error al devolver los datos' });
-//             });
-//     },
+    //     Contact.findById(contactId)
+    //         .then(contact => {
+    //             if (!contact) {
+    //                 return res.status(404).send({ message: 'El proyecto no existe' });
+    //             }
+    //             return res.status(200).send({ contact });
+    //         })
+    //         .catch(err => {
+    //             return res.status(500).send({ message: 'Error al devolver los datos' });
+    //         });
+    // },
 
 
-//     // # funcion para devolver listado de proyectos
+    // # funcion para devolver listado de proyectos
 
-//     getProyects: function(req, res) {
+    getContacts: function(req, res) {
 
-//         // metodo .sort() es para ordenar
-//         Proyect.find({}).sort('year')
+        // metodo .sort() es para ordenar
+        Contact.find({}).sort('year')
    
-//         .then(proyects => {
-//             return res.status(200).send({ proyects });
-//         })
-//         .catch(err => {
-//             return res.status(500).send({ message: 'Error al obtener los proyectos' })
-//         })
+        .then(contacts => {
+            return res.status(200).send({ contacts });
+        })
+        .catch(err => {
+            return res.status(500).send({ message: 'Error al obtener los proyectos' })
+        })
         
-//     },
+    },
 
     
 //     // funsion para actualizar un proyecto

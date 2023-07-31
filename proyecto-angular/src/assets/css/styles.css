@@ -1,3 +1,5 @@
+/* Importar estilos de bootstrap */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 /* Importar fuentes */
 
 body {
@@ -38,7 +40,7 @@ header {
 
 header ul {
     display: block;
-    width: 50%;
+    width: 60%;
     height: inherit;
     margin: 0px auto;
 }
@@ -158,6 +160,7 @@ article.about {
 .container {
     padding: 50px;
     padding-top: 10px;
+    margin: auto;
 }
 
 .container h2 {
@@ -168,7 +171,7 @@ article.about {
 }
 
 form {
-    width: 80%;
+    width: 100%;
 
 }
 
@@ -182,6 +185,7 @@ form label {
 form input[type="text"],
 form input[type="number"],
 form input[type="email"],
+form input[type="date"],
 form textarea {
     width: 50%;
     padding: 5px;
@@ -340,3 +344,5 @@ p {
 .buttom-delete {
     background: red;
 }
+
+/* estilos de notificaciones */

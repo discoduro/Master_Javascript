@@ -1,1 +1,49 @@
-<p>contact works!</p>
+<div class="container" *ngIf="contact">
+    <h2>{{title}}</h2>
+
+        <div class="message success" *ngIf="status === 'success'">
+            El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_contact._id]">verlo aqui</a>
+        </div>
+        <div class="message failed" *ngIf="status === 'failed'">
+            EL proyecto NO SE A PORDIDO CREAR
+        </div>
+
+    <form action="" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        <p>
+            <label for="nombre">Nombre</label>
+            <input type="text"  name="nombre" #nombre="ngModel" [(ngModel)]="contact.nombre" required>
+            <span  class="form-error" *ngIf="nombre.touched && !nombre.valid">
+                El nombre es requerido
+            </span>
+        </p>
+        <p>
+            <label for="description">Fecha</label>
+            <input  type="date"  name="description" #description="ngModel" [(ngModel)]="contact.fecha" required>
+            <span class="form-error"  *ngIf="description.touched && !description.valid">
+                La descripcion es requerida
+            </span>
+        </p>
+        <p>
+            <label for="category">Asunto</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="contact.asunto" required>
+            <span class="form-error"  *ngIf="category.touched && !category.valid">
+                La category es requerida
+            </span>
+        </p>
+        <p>
+            <label for="langs">Correo</label>
+            <input type="email"  name="langs" #langs="ngModel" [(ngModel)]="contact.correo" required>
+            <span class="form-error"  *ngIf="langs.touched && !langs.valid">
+                Los lenguajes son requeridos
+            </span>
+        </p>
+        <p>
+            <label for="year">Mensaje</label>
+            <textarea  name="year" #year="ngModel" [(ngModel)]="contact.mensaje" required></textarea>
+            <span class="form-error"  *ngIf="year.touched && !year.valid">
+                El año es requerido
+            </span>
+        </p>
+        <input type="submit" value="Enviar" [disabled]="!contactForm.form.valid">
+    </form>
+</div>  

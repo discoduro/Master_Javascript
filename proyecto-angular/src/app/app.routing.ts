@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from "./components/detail/detail.component";
 import { EditComponent } from "./components/edit/edit.component";
+import { notificationsComponent } from "./components/notifications/notifications.component";
 
 const appRoutes: Routes = [
     {path: '', component: AboutComponent},
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     {path: 'contacto', component: ContactComponent},
     {path: 'proyecto/:id', component: DetailComponent},
     {path: 'editar-proyecto/:id', component: EditComponent},
+    {path: 'notificaciones', component: notificationsComponent},
     {path: '**', component: ErrorComponent},
 
 ];
