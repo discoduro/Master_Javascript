@@ -14,15 +14,15 @@
             </thead>
             <!-- <a [routerLink]="['/proyecto', contact._id]"> -->
             <tbody>
-                <tr *ngFor="let contact of  contacts" class="notificacion">
-                    <td></td>
+                <tr *ngFor="let contact of contacts; let i = index" class="notificacion">
+                    <td>{{contador + i}}</td>
                     <td>{{contact.nombre}}</td>
                     <td>{{contact.fecha}}</td>
                     <td>{{contact.asunto}}</td>
                     <td>{{contact.correo}}</td>
                     <td>{{contact.mensaje}}</td>
                     <td>
-                        <a href="">Editar</a>
+                        <a href="">Editar</a>&nbsp;
                         <a href="">Eliminar</a>
                     </td>
                 </tr>

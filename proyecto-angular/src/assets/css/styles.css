@@ -88,7 +88,7 @@ header a:hover,
 /* contenedor principal */
 
 #content {
-    min-height: 500px;
+    min-height: 650px;
     width: 80%;
     margin: 0 auto;
     box-shadow: 0 0 40px black;
@@ -301,6 +301,8 @@ h1,
 h3,
 p {
     margin: 20px;
+    font-size: 15px;
+    /* text-align: justify; */
 }
 
 .buttoms-conf {
@@ -346,3 +348,11 @@ p {
 }
 
 /* estilos de notificaciones */
+.notificacion td{
+font-size: 10px
+}
+
+/* estilos de datos contacto  */
+.contacto{
+    float: right;
+}

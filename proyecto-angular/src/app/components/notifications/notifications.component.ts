@@ -18,6 +18,7 @@ import { Global } from 'src/app/services/global';
 export class notificationsComponent implements OnInit{
   public contacts: Contact[];
   public url: string;
+  public contador: number;
 
   constructor(
     private _contactService: ContactService
@@ -25,6 +26,7 @@ export class notificationsComponent implements OnInit{
     ){
       this.contacts = [];
       this.url = Global.url;
+      this.contador = 1;
     }
    
   getContacts(){
