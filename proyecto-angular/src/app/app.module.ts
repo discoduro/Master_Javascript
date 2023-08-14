@@ -14,6 +14,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { notificationsComponent } from './components/notifications/notifications.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { notificationsComponent } from './components/notifications/notifications
     DetailComponent,
     EditComponent,
     notificationsComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

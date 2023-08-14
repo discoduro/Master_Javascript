@@ -40,7 +40,7 @@ header {
 
 header ul {
     display: block;
-    width: 60%;
+    width: 68%;
     height: inherit;
     margin: 0px auto;
 }
@@ -171,7 +171,8 @@ article.about {
 }
 
 form {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 
 }
 
@@ -187,7 +188,7 @@ form input[type="number"],
 form input[type="email"],
 form input[type="date"],
 form textarea {
-    width: 50%;
+    width: 70%;
     padding: 5px;
 }
 

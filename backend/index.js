@@ -9,21 +9,22 @@ var app = require('./app')
 // define el puerto
 var port = 3700;
 
-mongoose.Promise =  global.Promise;
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://127.0.0.1:27017/portafolio')
-        .then(() => {
-            console.log('Conexion a la base de datos establecida satisfactoriamente...');
+    .then(() => {
+        console.log('Conexion a la base de datos establecida satisfactoriamente...');
 
-            // creacion servidor
+        // creacion servidor
 
-            app.listen(port, ()=>{
-                console.log('Servidor corriendo correctamente en la url Localhost:3700');
-            })
-
-
-
+        app.listen(port, () => {
+            console.log('Servidor corriendo correctamente en la url Localhost:3700');
         })
-        .catch(err => console.log(err));
+
+
+
+    })
+    .catch(err => console.log(err)
+    );
 
 
 // segunda forma de conexcion a base de datos
