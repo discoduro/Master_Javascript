@@ -31,7 +31,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    console.log(this.contact);
+    // console.log(this.contact);
 
     this._contactServices.saveContact(this.contact).subscribe(
       (response: any) => {

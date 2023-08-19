@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { Contact } from "../models/contact"; 
+import { Message } from "../models/message"; 
 import { Global } from "./global";
 
 
 @Injectable()
 
-export class ContactService{
+export class MessageService{
     public url : string;
 
     constructor(
@@ -25,18 +25,18 @@ export class ContactService{
 
     // # metodo para guardar un nuevo proyecto
 
-    saveContact(contact: Contact): Observable<any>{
-        let params = JSON.stringify(contact);
+    saveMessage(message: Message): Observable<any>{
+        let params = JSON.stringify(message);
         let headers = new HttpHeaders().set('Content-Type','application/json');
 
 
-        return this._http.post(this.url+'save-contact', params, {headers: headers});
+        return this._http.post(this.url+'save-message', params, {headers: headers});
     }
 
-    // getContacts(): Observable<any>{
-    //     let headers = new HttpHeaders().set('Content-Type','application/json');
-    //     return this._http.get(this.url+"notificaciones", {headers: headers});
-    // }
+    getMessage(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+        return this._http.get(this.url+"message", {headers: headers});
+    }
 
     // getProject(id: any): Observable<any>{
     //     let headers = new HttpHeaders().set('Content-Type','application/json');

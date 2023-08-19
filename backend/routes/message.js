@@ -28,7 +28,7 @@ var multipartMiddleware = multiparter({uploadDir: './uploads'});
     // router.post('/test', MessageController.test);
     router.post('/save-message', MessageController.saveMessage);
     // router.get('/proyect/:id?', MessageController.getProyect);
-    // router.get('/proyects', MessageController.getProyects);
+    router.get('/message', MessageController.getMessage);
     // router.put('/proyect/:_id', MessageController.updateProyect);
     // router.delete('/proyect/:id', MessageController.deleteProyect);
     // router.post('/upload-image/:id', MessageController, ProyectController.uploadImage);

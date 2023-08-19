@@ -1,42 +1,41 @@
-import { Component } from '@angular/core';
-import { ContactService } from 'src/app/services/contact.service';
+import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/services/message.service';
 import { Global } from 'src/app/services/global';
-import { Contact } from 'src/app/models/contact';
+import { Message } from 'src/app/models/message';
 import { NgForm } from '@angular/forms';
-import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css'],
   providers: [
-    ContactService
+    MessageService
   ]
 })
 export class MessageComponent {
 
   public title: string;
-  public contact: Contact;
-  public save_contact: any;
+  public message: Message;
+  public save_message: any;
   public url: string;
   public status: string;
 
   constructor(
-    private _contactServices: ContactService
+    private _messageService: MessageService
   ) {
     this.title = 'Crear mensaje';
-    this.contact = new Contact('', '', '', '', '', '');
+    this.message = new Message('', '', '', '', '', '');
     this.status = '';
     this.url = Global.url;
   }
 
   onSubmit(form: any) {
-    console.log(this.contact);
+    console.log(this.message);
 
-    this._contactServices.saveContact(this.contact).subscribe(
+    this._messageService.saveMessage(this.message).subscribe(
       (response: any) => {
-        if (response.contact) {
-          this.save_contact = response.contact;
+        if (response.message) {
+          this.save_message = response.message;
           this.status = 'success';
           form.reset()
         } else {
