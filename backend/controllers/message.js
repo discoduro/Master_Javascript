@@ -60,24 +60,24 @@ var controllerMessage = {
     // consular objetos de nuestra base de datos
     // hay que crear la ruta
 
-    // getContact: function(req, res) {
-    //     var contactId = req.params.id;
+    getMessage: function(req, res) {
+        var messageId = req.params.id;
 
-    //     if(contactId == null){
-    //         return res.status(404).send({ message: 'El proyecto no existe' });
-    //     }
+        if(messageId == null){
+            return res.status(404).send({ message: 'El proyecto no existe' });
+        }
     
-    //     Contact.findById(contactId)
-    //         .then(contact => {
-    //             if (!contact) {
-    //                 return res.status(404).send({ message: 'El proyecto no existe' });
-    //             }
-    //             return res.status(200).send({ contact });
-    //         })
-    //         .catch(err => {
-    //             return res.status(500).send({ message: 'Error al devolver los datos' });
-    //         });
-    // },
+        Message.findById(messageId)
+            .then(message => {
+                if (!message) {
+                    return res.status(404).send({ message: 'El proyecto no existe' });
+                }
+                return res.status(200).send({ contact });
+            })
+            .catch(err => {
+                return res.status(500).send({ message: 'Error al devolver los datos' });
+            });
+    },
 
 
     // # funcion para devolver listado de proyectos
@@ -125,22 +125,22 @@ var controllerMessage = {
 
 //     // # funcion para eliminar un objeto
 
-//     deleteProyect: function(req, res){
-//         var proyectId =req.params.id;
+    deleteMessage: function(req, res){
+        var messageId =req.params.id;
 
-//         Proyect.findByIdAndRemove(proyectId)
+        Message.findByIdAndRemove(messageId)
 
-//         .then(proyectRemove =>{
-//             if(!proyectRemove){
-//                 return  res.status(404).send({'message':'No se ha encontrado ningun registro con ese ID'})
-//                 }
-//             return res.status(200).send({message: proyectRemove})
-//         })
-//         .catch(err =>{
-//             console.log(err);
-//             return res.status(500).send({message: 'Error al eliminar el proyecto'})
-//         })
-//     },
+        .then(messageRemove =>{
+            if(!messageRemove){
+                return  res.status(404).send({'message':'No se ha encontrado ningun registro con ese ID'})
+                }
+            return res.status(200).send({message: messageRemove})
+        })
+        .catch(err =>{
+            console.log(err);
+            return res.status(500).send({message: 'Error al eliminar el proyecto'})
+        })
+    },
     
 //     //  funcion para subir imagenes al servidor
 //         // configurar el mutiparter para poder subir imagenes en el archivo de rutas

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/models/message';
 import { MessageService } from 'src/app/services/message.service';
 import { Global } from 'src/app/services/global';
-
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
@@ -16,21 +16,48 @@ import { Global } from 'src/app/services/global';
 })
 
 export class notificationsComponent implements OnInit {
+
+
+  
   public message: Message[];
   public url: string;
   public contador: number;
+  public confirm: boolean;
+
+
+
+
 
   constructor(
-    private _messageService: MessageService
-
+    private _messageService: MessageService,
+    private _router: Router,
+    private _route: ActivatedRoute
 
   ) {
     this.message = [];
     this.url = Global.url;
     this.contador = 1;
+    this.confirm = false;
   }
 
-  getMessage() {
+
+
+
+
+  ngOnInit(): void {
+    // this.getMessage();
+    this._route.params.subscribe((params: Params) => {
+      let id = params['id'];
+      this.getMessage(id);
+    });
+  }
+
+
+
+
+
+
+  getMessage(id: any) {
     this._messageService.getMessage().subscribe(
       response => {
         console.log(response);
@@ -44,7 +71,26 @@ export class notificationsComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
-    this.getMessage();
+
+
+
+
+  deleteMessage(id: any) {
+    this._messageService.deleteMessage(id).subscribe(
+      response => {
+        this._router.navigate(['/message']);
+      },
+      error => {
+        console.log(<any>error)
+      }
+    )
+
+  }
+
+
+
+
+  setConfirm(confirm: any) {
+    this.confirm = confirm;
   }
 }

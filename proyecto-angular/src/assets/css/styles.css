@@ -225,9 +225,10 @@ form input[type="submit"]:hover {
 }
 
 .message {
-    width: 40%;
+    width: 100%;
     padding: 5px;
     border: 1px solid #eee;
+    text-align: center;
 }
 
 .success {
@@ -350,7 +351,7 @@ p {
 
 /* estilos de notificaciones */
 .notificacion td{
-font-size: 10px
+/* font-size: 10px */
 }
 
 /* estilos de datos contacto  */

@@ -8,7 +8,7 @@
                     <th>Fecha</th>
                     <th>Asunto</th>
                     <th>Correo</th>
-                    <th>Mensaje</th>
+                    <!-- <th>Mensaje</th> -->
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -21,10 +21,10 @@
                     <td>{{messages.fecha}}</td>
                     <td>{{messages.asunto}}</td>
                     <td>{{messages.correo}}</td>
-                    <td>{{messages.mensaje}}</td>
+                    <!-- <td>{{messages.mensaje}}</td> -->
                     <td>    
-                        <a href="">Editar</a>&nbsp;
-                        <a href="">Eliminar</a>
+                        <a >Responder</a>&nbsp;
+                        <a href="" (click)="setConfirm(true)">Eliminar</a>
                     </td>
                 </tr>
             </tbody>

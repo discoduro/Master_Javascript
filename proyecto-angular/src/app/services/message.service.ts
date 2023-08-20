@@ -44,11 +44,11 @@ export class MessageService{
     // }
 
 
-    // deleteProject(id: any):Observable<any>{
-    //     let headers = new HttpHeaders().set('Content-Type','application/json');
+    deleteMessage(id: any):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
 
-    //     return this._http.delete(this.url+'proyect/'+id, {headers: headers});
-    // }
+        return this._http.delete(this.url+'mensaje/'+id, {headers: headers});
+    }
 
     // updateProject(project: Project):Observable<any>{
     //     let params = JSON.stringify(project);

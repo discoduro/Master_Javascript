@@ -24,10 +24,9 @@ var multipartMiddleware = multiparter({uploadDir: './uploads'});
 
 // acceder al metodo home
 
-    router.get('/homeMessage', MessageController.homeMessage);
-    // router.post('/test', MessageController.test);
+    router.get('/homeMessage', MessageController.homeMessage); // ejemplo de pireva a conexcion
     router.post('/save-message', MessageController.saveMessage);
-    // router.get('/proyect/:id?', MessageController.getProyect);
+    router.get('/proyect/:id?', MessageController.getMessage);
     router.get('/message', MessageController.getMessage);
     // router.put('/proyect/:_id', MessageController.updateProyect);
     // router.delete('/proyect/:id', MessageController.deleteProyect);
