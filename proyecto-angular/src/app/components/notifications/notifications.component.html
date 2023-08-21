@@ -1,33 +1,36 @@
 <div class="container">
     <h2>Notificaciones de Mensajes por Contacto</h2>
-        <table class="table table-striped table-hover table-bordered ">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Asunto</th>
-                    <th>Correo</th>
-                    <!-- <th>Mensaje</th> -->
-                    <th>Opciones</th>
-                </tr>
-            </thead>
-            <!-- <a [routerLink]="['/proyecto', contact._id]"> -->
-            <tbody>
-                <tr *ngFor="let messages of message; let i = index" class="notificacion">
+    <table class="table table-striped table-hover table-bordered ">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Asunto</th>
+                <th>Correo</th>
+                <th>Mensaje</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <!-- <a [routerLink]="['/proyecto', contact._id]"> -->
+        <tbody>
+            <tr *ngFor="let messages of message; let i = index"  class="notificacion">
+
+                <td>{{contador + i}}</td>
+                <td>{{messages.nombre}}</td>
+                <td>{{messages.fecha}}</td>
+                <td>{{messages.asunto}}</td>
+                <td>{{messages.correo}}</td>
+                <td>{{messages.mensaje}}</td>
+                <td>
+                    <a href="">Responder</a>&nbsp;
+                    <a href="notificaciones" (click)="deleteMessage(messages._id)">Eliminar</a>
+
                     
-                    <td>{{contador + i}}</td>
-                    <td>{{messages.nombre}}</td>
-                    <td>{{messages.fecha}}</td>
-                    <td>{{messages.asunto}}</td>
-                    <td>{{messages.correo}}</td>
-                    <!-- <td>{{messages.mensaje}}</td> -->
-                    <td>    
-                        <a >Responder</a>&nbsp;
-                        <a href="" (click)="setConfirm(true)">Eliminar</a>
-                    </td>
-                </tr>
-            </tbody>
-            <!-- </a> -->
-        </table>
+                   
+                </td>
+            </tr>
+        </tbody>
+        <!-- </a> -->
+    </table>
 </div>

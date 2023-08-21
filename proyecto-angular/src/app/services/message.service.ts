@@ -35,26 +35,26 @@ export class MessageService{
 
     getMessage(): Observable<any>{
         let headers = new HttpHeaders().set('Content-Type','application/json');
-        return this._http.get(this.url+"message", {headers: headers});
+        return this._http.get(this.url+"messages", {headers: headers});
     }
 
-    // getProject(id: any): Observable<any>{
-    //     let headers = new HttpHeaders().set('Content-Type','application/json');
-    //     return this._http.get(this.url+'proyect/'+id, {headers: headers});
-    // }
+    getMessages(id: any): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+        return this._http.get(this.url+'message/'+id, {headers: headers});
+    }
 
 
     deleteMessage(id: any):Observable<any>{
         let headers = new HttpHeaders().set('Content-Type','application/json');
 
-        return this._http.delete(this.url+'mensaje/'+id, {headers: headers});
+        return this._http.delete(this.url+'message/'+id, {headers: headers});
     }
 
-    // updateProject(project: Project):Observable<any>{
-    //     let params = JSON.stringify(project);
-    //     let headers = new HttpHeaders().set('Content-Type','application/json');
+    updateMessage(message: Message):Observable<any>{
+        let params = JSON.stringify(message);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
 
-    //     return this._http.put(this.url+'proyect/'+project._id, params, {headers: headers});
-    // }
+        return this._http.put(this.url+'message/'+message._id, params, {headers: headers});
+    }
     
 }

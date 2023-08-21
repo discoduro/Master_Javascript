@@ -18,7 +18,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class notificationsComponent implements OnInit {
 
 
-  
+
   public message: Message[];
   public url: string;
   public contador: number;
@@ -40,10 +40,6 @@ export class notificationsComponent implements OnInit {
     this.confirm = false;
   }
 
-
-
-
-
   ngOnInit(): void {
     // this.getMessage();
     this._route.params.subscribe((params: Params) => {
@@ -51,11 +47,6 @@ export class notificationsComponent implements OnInit {
       this.getMessage(id);
     });
   }
-
-
-
-
-
 
   getMessage(id: any) {
     this._messageService.getMessage().subscribe(
@@ -71,26 +62,20 @@ export class notificationsComponent implements OnInit {
     )
   }
 
-
-
-
-
   deleteMessage(id: any) {
-    this._messageService.deleteMessage(id).subscribe(
-      response => {
-        this._router.navigate(['/message']);
-      },
-      error => {
-        console.log(<any>error)
-      }
-    )
-
+    if (window.confirm('¿Estás seguro de que deseas eliminar este mensaje?')) {
+      this._messageService.deleteMessage(id).subscribe(
+        response => {
+          this.confirm = false; // Reset the confirmation flag
+          this.getMessage(id); // Refresh the messages after deletion
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    } else {
+      // El usuario canceló la eliminación
+    }
   }
 
-
-
-
-  setConfirm(confirm: any) {
-    this.confirm = confirm;
-  }
 }
