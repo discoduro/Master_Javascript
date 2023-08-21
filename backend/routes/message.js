@@ -25,13 +25,13 @@ var multipartMiddleware = multiparter({uploadDir: './uploads'});
 // acceder al metodo home
 
     router.get('/homeMessage', MessageController.homeMessage); // ejemplo de pireva a conexcion
-    router.post('/save-message', MessageController.saveMessage);
-    router.get('/message/:id?', MessageController.getMessage);
-    router.get('/messages', MessageController.getMessages); // hay que probar este metodo
-    // router.put('/proyect/:_id', MessageController.updateProyect);
-    // router.delete('/proyect/:id', MessageController.deleteProyect);
-    // router.post('/upload-image/:id', MessageController, ProyectController.uploadImage);
-    // router.get('/get-image/:image',  MessageController.getImageFile);
+    router.post('/save-message', MessageController.saveMessage);    //  funciona
+    router.get('/message/:id?', MessageController.getMessage);      //  funciona
+    router.get('/messages', MessageController.getMessages);         //  funciona
+    router.put('/message/:_id', MessageController.updateMessage);   //  funciona
+    router.delete('/message/:id', MessageController.deleteMessage); //  funciona
+    // router.post('/upload-image/:id', MessageController, ProyectController.uploadImage);   // es para subir una imagen
+    // router.get('/get-image/:image',  MessageController.getImageFile);        // consultar la imagen
 
     
     

@@ -97,30 +97,30 @@ var controllerMessage = {
     },
 
     
-//     // funsion para actualizar un proyecto
+    // funsion para actualizar un proyecto
 
-//     updateProyect: function(req, res) {
-//         // recoje los paeametros enviado por la url en la cual le agrega obligatoriamente in id
-//         var proyectId = req.params._id;
+    updateMessage: function(req, res) {
+        // recoje los paeametros enviado por la url en la cual le agrega obligatoriamente in id
+        var messageId = req.params._id;
 
-//         // recojer los parametro pasados por body
-//         var update = req.body;
+        // recojer los parametro pasados por body
+        var update = req.body;
     
-//         console.log("proyectId:", proyectId);
-//         console.log("update:", update);
+        console.log("messageId:", messageId);
+        console.log("update:", update);
     
-//         Proyect.findByIdAndUpdate(proyectId, update, { new: true })
-//             .then(proyectUpdate => {
-//                 if (!proyectUpdate) {
-//                     return res.status(404).send({ message: 'El proyecto no existe' });
-//                 }
-//                 return res.status(200).send({ project: proyectUpdate });
-//             })
-//             .catch(error => {
-//                 console.error(error);
-//                 return res.status(500).send({ message: 'Error al actualizar el proyecto' });
-//             });
-//     },
+        Message.findByIdAndUpdate(messageId, update, { new: true })
+            .then(messageUpdate => {
+                if (!messageUpdate) {
+                    return res.status(404).send({ message: 'El proyecto no existe' });
+                }
+                return res.status(200).send({ message: messageUpdate });
+            })
+            .catch(error => {
+                console.error(error);
+                return res.status(500).send({ message: 'Error al actualizar el proyecto' });
+            });
+    },
 
 
 //     // # funcion para eliminar un objeto
