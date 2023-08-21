@@ -26,8 +26,8 @@ var multipartMiddleware = multiparter({uploadDir: './uploads'});
 
     router.get('/homeMessage', MessageController.homeMessage); // ejemplo de pireva a conexcion
     router.post('/save-message', MessageController.saveMessage);
-    router.get('/proyect/:id?', MessageController.getMessage);
-    router.get('/message', MessageController.getMessage);
+    router.get('/message/:id?', MessageController.getMessage);
+    router.get('/messages', MessageController.getMessages); // hay que probar este metodo
     // router.put('/proyect/:_id', MessageController.updateProyect);
     // router.delete('/proyect/:id', MessageController.deleteProyect);
     // router.post('/upload-image/:id', MessageController, ProyectController.uploadImage);

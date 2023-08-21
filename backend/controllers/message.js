@@ -72,7 +72,7 @@ var controllerMessage = {
                 if (!message) {
                     return res.status(404).send({ message: 'El proyecto no existe' });
                 }
-                return res.status(200).send({ contact });
+                return res.status(200).send({ message });
             })
             .catch(err => {
                 return res.status(500).send({ message: 'Error al devolver los datos' });
@@ -82,7 +82,7 @@ var controllerMessage = {
 
     // # funcion para devolver listado de proyectos
 
-    getMessage: function(req, res) {
+    getMessages: function(req, res) {
 
         // metodo .sort() es para ordenar
         Message.find({}).sort('year')
