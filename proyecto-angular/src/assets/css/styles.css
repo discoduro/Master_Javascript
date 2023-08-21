@@ -40,7 +40,7 @@ header {
 
 header ul {
     display: block;
-    width: 68%;
+    width: 73%;
     height: inherit;
     margin: 0px auto;
 }
@@ -358,3 +358,58 @@ p {
 .contacto{
     float: right;
 }
+
+/* contacto  */
+
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: auto;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #4286cfd8;
+    color: #fff;
+  }
+
+  .social-icons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    color: #333;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }

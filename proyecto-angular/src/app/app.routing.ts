@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     {path: 'sobre-mi', component: AboutComponent},
     {path: 'proyectos', component: ProjectsComponent},
     {path: 'crear-proyecto', component: CreateComponent},
-    {path: 'contacto', component: ErrorComponent}, //ContactComponent
+    {path: 'contacto', component: ContactComponent}, //ContactComponent
     {path: 'proyecto/:id', component: DetailComponent},
     {path: 'editar-proyecto/:id', component: EditComponent},
     {path: 'notificaciones', component: notificationsComponent},

@@ -1,50 +1,153 @@
-<div class="container" *ngIf="contact">
-    <h2>{{title}}</h2>
-    <h3>esta pagina es para modificar a formulraio de medio de contacto modificable</h3>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-        <div class="message success" *ngIf="status === 'success'">
-            El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_contact._id]">verlo aqui</a>
-        </div>
-        <div class="message failed" *ngIf="status === 'failed'">
-            EL proyecto NO SE A PORDIDO CREAR
-        </div>
+  .container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
 
-    <form action="" #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
-        <p>
-            <label for="nombre">Nombre</label>
-            <input type="text"  name="nombre" #nombre="ngModel" [(ngModel)]="contact.nombre" required>
-            <span  class="form-error" *ngIf="nombre.touched && !nombre.valid">
-                El nombre es requerido
-            </span>
-        </p>
-        <p>
-            <label for="description">Fecha</label>
-            <input  type="date"  name="description" #description="ngModel" [(ngModel)]="contact.fecha" required>
-            <span class="form-error"  *ngIf="description.touched && !description.valid">
-                La descripcion es requerida
-            </span>
-        </p>
-        <p>
-            <label for="category">Asunto</label>
-            <input type="text" name="category" #category="ngModel" [(ngModel)]="contact.asunto" required>
-            <span class="form-error"  *ngIf="category.touched && !category.valid">
-                La category es requerida
-            </span>
-        </p>
-        <p>
-            <label for="langs">Correo</label>
-            <input type="email"  name="langs" #langs="ngModel" [(ngModel)]="contact.correo" required>
-            <span class="form-error"  *ngIf="langs.touched && !langs.valid">
-                Los lenguajes son requeridos
-            </span>
-        </p>
-        <p>
-            <label for="year">Mensaje</label>
-            <textarea  name="year" #year="ngModel" [(ngModel)]="contact.mensaje" required></textarea>
-            <span class="form-error"  *ngIf="year.touched && !year.valid">
-                El año es requerido
-            </span>
-        </p>
-        <input type="submit" value="Enviar" [disabled]="!contactForm.form.valid">
-    </form>
-</div>  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+<title>Formulario de Contacto</title>
+</head>
+<body>
+<div class="container">
+  <form>
+    <label for="ciudad">Ciudad de la Empresa:</label>
+    <input type="text" id="ciudad" name="ciudad" required>
+    
+    <label for="nombre_empresa">Nombre de Empresa:</label>
+    <input type="text" id="nombre_empresa" name="nombre_empresa" required>
+    
+    <label for="direccion_empresa">Dirección de la Empresa:</label>
+    <input type="text" id="direccion_empresa" name="direccion_empresa" required>
+    
+    <label for="nit_empresa">NIT de la Empresa:</label>
+    <input type="text" id="nit_empresa" name="nit_empresa" required>
+    
+    <label for="nombre_gerente">Nombre de Gerente:</label>
+    <input type="text" id="nombre_gerente" name="nombre_gerente" required>
+    
+    <label for="nombre_contacto">Nombre de Contacto:</label>
+    <input type="text" id="nombre_contacto" name="nombre_contacto" required>
+    
+    <label for="contacto_celular">Número de Contacto Celular:</label>
+    <input type="tel" id="contacto_celular" name="contacto_celular" required>
+    
+    <label for="contacto_telefono">Número de Contacto Teléfono Fijo:</label>
+    <input type="tel" id="contacto_telefono" name="contacto_telefono" required>
+    
+    <label for="correo_atencion">Correo Electrónico de Atención:</label>
+    <input type="email" id="correo_atencion" name="correo_atencion" required>
+    
+    <button type="submit">Enviar</button>
+  </form>
+  <footer>
+    &copy; Derechos Reservados
+  </footer>
+</div>
+</body>
+</html> -->
+
+
+<div class="container">
+  <h1>Información de la Empresa</h1>
+  <hr>
+  <table>
+    <tr>
+      <th>Ciudad de la Empresa</th>
+      <td>Bogota D.C</td>
+    </tr>
+    <tr>
+      <th>Nombre de Empresa</th>
+      <td>Enginer Desarrollo S.A.S</td>
+    </tr>
+    <tr>
+      <th>Dirección de la Empresa</th>
+      <td>Calle 128 # 42 27 norte</td>
+    </tr>
+    <tr>
+      <th>NIT de la Empresa</th>
+      <td>74952389634</td>
+    </tr>
+    <tr>
+      <th>Nombre de Gerente</th>
+      <td>Alejandro Diaz</td>
+    </tr>
+    <tr>
+      <th>Nombre de Contacto</th>
+      <td>Jane Smith</td>
+    </tr>
+    <tr>
+      <th>Número de Contacto Celular</th>
+      <td>+1234567890</td>
+    </tr>
+    <tr>
+      <th>Número de Contacto Teléfono Fijo</th>
+      <td>+9876543210</td>
+    </tr>
+    <tr>
+      <th>Correo Electrónico de Atención</th>
+      <td>info@empresa.com</td>
+    </tr>
+  </table>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
+
