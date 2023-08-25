@@ -34,7 +34,7 @@ import { MessageComponent } from './components/message/message.component';
     AppRoutingModule,
     routing,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     appRoutingProviders

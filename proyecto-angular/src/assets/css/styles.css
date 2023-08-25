@@ -380,6 +380,8 @@ p {
     border-collapse: collapse;
     margin-top: 20px;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 
   th, td {

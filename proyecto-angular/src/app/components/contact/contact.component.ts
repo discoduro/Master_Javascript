@@ -3,6 +3,7 @@ import { ContactService } from 'src/app/services/contact.service';
 import { Global } from 'src/app/services/global';
 import { Contact } from 'src/app/models/contact';
 import { NgForm } from '@angular/forms';
+  
 
 
 @Component({
